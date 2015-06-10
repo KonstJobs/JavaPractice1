@@ -5,10 +5,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
 
     
+    <!--    ==========================   ACCOUNT   =============================-->
+    
+    <!--    CONTACT-->
+    
     <bean id="contact" class="account.Contact">
         <property name="firstName" value="Bob" />
         <property name="lastName" value="Spanch" />
-        <!--        <property name="birthDate">
+        
+        <!--        <property name="birthDate" ref="">
             <bean id="dateFormat" class="java.time.LocalDate">
                 <constructor-arg value="2001-02-02" />
             </bean>
@@ -46,38 +51,29 @@
     
     </bean>
     
+    <!--    HOBBY-->
     <bean  id="hobby" class="account.Hobby" >
+        <property name="description" value="descr" />
+        <property name="title" value="some title" />
     </bean>
-    
-    <bean id="hobby1" class="account.Hobby">
-    </bean>
-    
+     
+    <!--     PLACE-->
     <bean id="place" class="account.Place">
         <property name="latitude" value="3.2" />
+        <property name="longitude" value="3.2" />
+        <property name="description" value="asdf" />
+        <property name="title" value="some title" />
            
     </bean>
     
     
+    <!--MESSAGE-->
     
     <bean id="message" class="account.Message">
         <property name="from" ref="contact" />
         <property name="to" ref="contact" />
+        <!--        <property name="date" value="" />-->
+        <property name="content" value="some content" />
     </bean>
-    
-    <!--   ======================================================================-->
-
-    <bean id="contactDao" class="dao.ContactDao">
-    </bean>
-    
-    <bean id="hobbyDao" class="dao.HobbyDao">
-    </bean>
-    
-    <bean id="messageDao" class="dao.MessageDao">
-    </bean>
-    
-    <bean id="placeDao" class="dao.PlaceDao">
-    </bean>
-    
-    
-    
+   
 </beans>

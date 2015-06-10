@@ -25,13 +25,10 @@ public class App {
 
         Set<Hobby> hobs = contact.getHobbies();
 
-        System.out.println("hobs: " + hobs.size());
-
-        for (Hobby hob : hobs) {
+        hobs.stream().forEach((hob) -> {
             System.out.println(hob.getTitle());
-        }
-        
-        
+        });
+
         Place pl = (Place) context.getBean("place");
         System.out.println(pl.getLatitude());
     }
